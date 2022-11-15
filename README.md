@@ -1,5 +1,5 @@
 ### `Cryptionary`
-Cryptionary is a very simple React app made with react.
+Cryptionary is a very simple React app and also a quick project.
 
 ![crypt](https://user-images.githubusercontent.com/82631826/201977560-a75ae82b-ac64-44b4-87a9-08197e1ebfd3.png)
 
