@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap');
+
+$light : #F4D689;
+$lighter : #FFFFEC;
+$dark : #2F322B;
+$darker : #141615;
+
+$nameW : clamp(200px,15vw,250px);
+$priceW : clamp(110px,9vw,150px);
+$volumeW : clamp(110px,10vw,220px);;
+$hour24W : clamp(60px,6vw,100px);
+
+$field:clamp(0.8rem,1vw,1rem);
+$fieldTab:clamp(0.46rem,2vw,0.8rem);
+
+$nameWT : clamp(40px,6vw,80px);
+$priceWT : clamp(55px,3vw,70px);
+$volumeWT : clamp(55px,5vw,160px);;
+$hour24WT : clamp(45px,4vw,50px);
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+.container{
+    padding: 40px 70px 70px 70px;
+    width: 100vw;
+    min-height: 100vh;
+    height: auto;
+    background-image: url(./resources/background.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+
+    nav{
+        display: flex;
+        justify-content: space-between;
+
+        p{
+            font-family: 'Source Code Pro', monospace;
+            color: $light;
+            font-size: 1rem;
+            font-weight: 400;
+            align-self: center;
+        }
+        div{
+            display: flex;
+            gap: 1rem;
+            img{
+                align-self: center;
+                width: 3rem;
+            }
+        }
+    }
+
+    .headAndImage{
+        display: flex;
+        justify-content: space-between;
+
+        .head{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            
+            .heading{
+                font-family: 'Source Code Pro', monospace;
+                color: $light;
+                font-size: clamp(3.052rem,5vw,5rem);
+                // font-size: 5vw;
+                font-weight: 600;
+                letter-spacing: -0.15rem;
+            }
+
+            .search{
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+
+                p{
+                    font-family: 'Source Code Pro', monospace;
+                    color: $light;
+                    letter-spacing: 0.2rem;
+                    font-weight: 700;
+                    font-size: 1rem;
+                }
+
+                input{
+                    height: 40px;
+                    padding: 0.5em 1em;
+                    font-family: 'Source Code Pro', monospace;
+                    color: $darker;
+                    font-weight: 400;
+                    outline: none;
+                    background-color: $lighter;
+                    border: none;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+    .image{
+        width: clamp(14rem,20vw,18rem);
+        img{
+            width: 100%;
+            // filter: drop-shadow(0px 0px 9px rgba(255, 249, 225, 0.476));
+        }
+    }
+    .holder{
+        width: 100%;
+        align-self: center;
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+
+        .tuppleNames{
+            width: 100%;
+            padding: 1rem 3rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: space-between;
+            list-style: none;
+            font-family: 'Source Code Pro', monospace;
+            font-weight: 700;
+            font-size: $field;
+            text-align: left;
+            color: $light;
+            letter-spacing: 0.1rem;
+            text-transform: uppercase;
+            background-color: $dark;
+            border: 1px solid $lighter;
+            border-width: 1px 1px 0px 1px;
+            border-radius: 5px 5px 0px 0px;
+            box-shadow: inset 0 0 30px #f4d68932;
+
+            >:nth-child(1){
+                width: $nameW;
+            }
+            >:nth-child(2){
+                width: $priceW;
+            }
+            >:nth-child(3){
+                width: $volumeW;
+            }
+            >:nth-child(4){
+                width: $hour24W;
+            }
+        }
+        .cryptoData{
+            min-height: 0px;
+            max-height: 529px;
+            overflow-y: scroll;
+            border: 1px solid $lighter;
+            border-width: 1px 1px 1px 1px;
+            border-radius: 0px 0px 5px 5px;
+        }
+    }
+}
+
+// Item
+
+.item{
+    width: 100%;
+    padding: 1rem 3rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    list-style: none;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 400;
+    font-size: $field;
+    color: $light;
+    text-align: left;
+    // box-shadow: inset 0 0 10px #f4d6891a;
+
+    >:nth-child(1){
+        width: $nameW;
+    }
+    >:nth-child(2){
+        width: $priceW;
+    }
+    >:nth-child(3){
+        width: $volumeW;
+    }
+    >:nth-child(4){
+        width: $hour24W;
+    }
+    .priceChange.pos{
+        color: rgb(139, 231, 139);
+    }
+    .priceChange.neg{
+        color: rgb(231, 139, 139);
+    }
+}
+.item:nth-child(even){
+    background-color: $darker;
+}
+.item:nth-child(odd){
+    background-color: $dark;
+}
+
+// Tablet
+@media only screen and (min-width: 481px) and (max-width: 768px){
+    .container{
+        padding: 40px 50px 70px 50px;
+        background-position: left;
+
+        nav{
+            P{
+                font-size: 0.8rem;
+            }
+            div{
+                a{
+                    img{
+                        width: 5rem;
+                    }
+                }
+            }
+        }
+        .headAndImage{
+            .head{
+                .heading{
+                    font-size: clamp(1.563rem,7vw,3.815rem);
+                    // font-size: 1.953rem;
+                    // color: palevioletred;
+                }
+            }
+            .image{
+                width: clamp(8rem,28vw,13.5rem);
+                // width: 12rem;
+            }
+        } 
+        .holder{
+            .tuppleNames{
+                font-size: $fieldTab;
+
+                >:nth-child(1){
+                    width: $nameWT;
+                }
+                >:nth-child(2){
+                    width: $priceWT;
+                }
+                >:nth-child(3){
+                    width: $volumeWT;
+                }
+                >:nth-child(4){
+                    width: $hour24WT;
+                }
+            }
+        }
+        .item{
+            font-size: $fieldTab;
+
+            >:nth-child(1){
+                width: $nameWT;
+            }
+            >:nth-child(2){
+                width: $priceWT;
+            }
+            >:nth-child(3){
+                width: $volumeWT;
+            }
+            >:nth-child(4){
+                width: $hour24WT;
+            }
+        } 
+    }
+}
+
+// Smartphone
+@media only screen and (min-width: 320px) and (max-width: 480px){
+    .container{
+        padding: 20px 25px 70px 25px;
+        background-position: left;
+
+        nav{
+            p{
+                font-size: 0.8rem;
+            }
+            div{
+                a{
+                    img{
+                        width: 2rem;
+                    }
+                }
+            }
+        }
+
+        .headAndImage{
+            flex-direction: column-reverse;
+            gap: 0.5rem;
+            .head{
+                gap: 3rem;
+                .heading{
+                    font-size: 3.052rem;
+                    text-align: center;
+                }
+                .search{
+                    p{
+                        font-size: 0.8rem;
+                        text-align: center;
+                    }
+                }
+            }
+            .image{
+                align-self: center;
+            }
+        } 
+        .holder{
+            .tuppleNames{
+                padding: 1rem 0.5rem;
+                font-size: 0.8rem;
+                overflow-x: scroll;
+
+            }
+            .cryptoData{
+                overflow-x: scroll;
+            }
+        }
+        .item{
+            padding: 1rem 0.5rem;
+            font-size: 0.8rem;
+        } 
+    }
+}
